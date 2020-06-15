@@ -8,31 +8,7 @@ whenever sqlerror exit rollback;
 prompt Proporcionar el password del usuario sys:
 connect sys as sysdba
 
-set serveroutput on;
-
--- Para REINICAR TODO 
-declare 
-  cursor cur_usuarios is
-    select username from dba_users where username like '%_PROY_INVITADO';
-begin
-  for r in cur_usuarios loop
-    execute immediate 'drop user ' ||r.username||' cascade';
-  end loop;
-end;
-/
-
-declare 
-  cursor cur_usuarios is
-    select username from dba_users where username like '%_PROY_ADMIN';
-begin
-  for r in cur_usuarios loop
-    execute immediate 'drop user ' ||r.username||' cascade';
-  end loop;
-end;
-/
-
 prompt CREACION Y PERMISOS | USUARIOS
-
 
 prompt USUARIO ADMIN
 create user muva_proy_admin identified by muva quota unlimited on users;
@@ -55,36 +31,36 @@ grant rol_invitado to muva_proy_invitado;
 
 
 
-prompt CRACION Y PERMISOS | FOTOS CASAS 
-!cp -r fotosCasa /tmp/
+prompt CREACION Y PERMISOS | FOTOS CASAS 
+!mkdir /tmp/fotosCasa
 !chmod 777 /tmp/fotosCasa
 
 create directory fotosCasa as '/tmp/fotosCasa';
 grant read, write on directory fotosCasa to muva_proy_admin;
-grant read, write on directory fotosCasa to muva_proy_invitado;
 
 
-
-prompt CRACION Y PERMISOS | FOTOS ICONOS 
-!cp -r iconos /tmp/
+prompt E Y PERMISOS | FOTOS ICONOS 
+!mkdir /tmp/iconos
 !chmod 777 /tmp/iconos
 
 create directory iconos as '/tmp/iconos';
 grant read, write on directory iconos to muva_proy_admin;
-grant read, write on directory iconos to muva_proy_invitado;
 
 
-
-prompt CRACION Y PERMISOS | FOTOS PDF 
-!cp -r pdf /tmp/
+prompt E Y PERMISOS | FOTOS PDF 
+!mkdir /tmp/pdf
 !chmod 777 /tmp/pdf
 
 create directory pdf as '/tmp/pdf';
 grant read, write on directory pdf to muva_proy_admin;
-grant read, write on directory pdf to muva_proy_invitado;
 
 
+prompt E Y PERMISOS | T.EXTERNAS
+!mkdir /tmp/extTables
+!chmod 777 /tmp/extTables
 
+create directory extTables as '/tmp/extTables';
+grant read, write on directory extTables to muva_proy_admin;
 
 prompt DONE - 01!
 
