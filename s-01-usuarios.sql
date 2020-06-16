@@ -1,5 +1,5 @@
 --@Autores: Alfonso Murrieta Villegas | Joaquin Valdespino Mendieta
---@Fecha creación: 09/12/2019
+--@Fecha creación: 18/06/2020
 --@Descripción: Creación de usuario s y asignación de permisos-privilegios
 
 

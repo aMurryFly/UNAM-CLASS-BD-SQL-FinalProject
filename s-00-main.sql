@@ -1,5 +1,5 @@
 --@Autores: Alfonso Murrieta Villegas | Joaquin Valdespino Mendieta
---@Fecha creación: 09/12/2019
+--@Fecha creación: 18/06/2020
 --@Descripción: main code para creación de todo el entorno
 
 whenever sqlerror exit rollback
@@ -57,11 +57,11 @@ connect muva_proy_admin/muva
 start s-05-secuencias.sql
  
 start s-02-entidades.sql
---start s-03-tablas-temporales.sql
---start s-04-tablas-externas.sql
---start s-06-indices.sql
---start s-07-sinonimos.sql
---start s-08-vistas.sql
+start s-03-tablas-temporales.sql
+start s-04-tablas-externas.sql
+start s-06-indices.sql
+start s-07-sinonimos.sql
+start s-08-vistas.sql
 --start s-09-carga-inicial.sql
 --start s-10-consultas.sql
 
