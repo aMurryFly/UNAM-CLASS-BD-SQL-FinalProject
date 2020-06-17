@@ -12,7 +12,7 @@ create table usuario(
     apellido_materno varchar2(40),
     password varchar2(15) not null,
     email varchar2(40) not null,
-    es_dueño number(1,0) not null,
+    --es_dueño number(1,0) not null,
     constraint usuario_email_uk unique (email),
     constraint usuario_nombre_usuario_uk unique(nombre_usuario),
     constraint usuario_password_chk check(LENGTH(password)>=8 and LENGTH(password)<=15)
@@ -127,6 +127,7 @@ create table imagen(
     imagen_id number(2,0),
     vivienda_id number(10,0),
     imagen blob not null,
+    nombre_archivo varchar2(100) not null,
     constraint imagen_pk primary key ( imagen_id,vivienda_id),
     --FK
     constraint imagen_vivienda_id_fk foreign key (vivienda_id) references vivienda(vivienda_id)
