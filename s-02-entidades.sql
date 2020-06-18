@@ -104,9 +104,9 @@ create table tarjeta_credito(
 prompt T.SERVICIO
 create table servicio(
     servicio_id number(10,0) default servicio_seq.nextval constraint servicio_pk primary key,
+    icono blob not null,
     nombre varchar2(100) not null,
     descripcion varchar2(2000) not null,
-    icono blob not null,
     constraint servicio_nombre_uk unique(nombre)
 );
 
@@ -140,9 +140,9 @@ prompt T.VIVIENDA_RENTAR
 create table vivienda_rentar(
     vivienda_id number(10, 0) constraint vivienda_rentar_pk primary key,
     renta_mensual number(20,2) not null,
-    fecha_deposito number(2,0) not null,
+    fecha_deposito date default sysdate not null,
     constraint vivienda_rentar_vivienda_id_fk foreign key (vivienda_id) references vivienda(vivienda_id),
-    constraint vivienda_rentar_fecha_deposito_chk check (fecha_deposito > 0 and fecha_deposito <=31),
+    --constraint vivienda_rentar_fecha_deposito_chk check (fecha_deposito > 0 and fecha_deposito <=31),
     constraint vivienda_rentar_renta_mensual_chk check(renta_mensual>0)
 );
 

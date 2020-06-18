@@ -62,7 +62,7 @@ start s-04-tablas-externas.sql
 start s-06-indices.sql
 start s-07-sinonimos.sql
 start s-08-vistas.sql
---start s-09-carga-inicial.sql
+start s-09-carga-inicial.sql
 --start s-10-consultas.sql
 
 
