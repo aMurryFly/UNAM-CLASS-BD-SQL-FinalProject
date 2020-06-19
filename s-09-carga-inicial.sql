@@ -42,6 +42,8 @@ start dataFiles/s-09-venta_usuario.sql
 
 start dataFiles/s-09-pago.sql
 
+start dataFiles/s-09-carrito_temp.sql
+
 
 prompt DONE S-09!
 

@@ -5,7 +5,7 @@
 --union entre vivienda y usuario (opciones)
 
 prompt TTem. BUSCANDO CASA
-create global temporary table interesado(
+create global temporary table carrito_temp(
     usuario_id number(10,0) not null,
     nombre_usuario varchar2(40) not null,
     email   varchar2(40) not null,
