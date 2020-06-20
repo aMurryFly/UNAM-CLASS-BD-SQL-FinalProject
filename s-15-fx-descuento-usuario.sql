@@ -29,13 +29,13 @@ begin
     where a.usuario_id = p_usuario_id and vc.fecha_inicio >= sysdate -365;
 
     --maximo podemos dar un 50% de descuento 
-    if v_ingreso > 6000 then
+    if v_ingreso > 6000 and v_ingreso <12000 then
       v_desc := 1 + v_desc;
     elsif v_ingreso > 12000 then 
       v_desc := 3+v_desc;
     end if;
 
-    if  v_alquileres> 3 then
+    if  v_alquileres>= 3 then
       v_desc := 2 + v_desc;
     end if;
 

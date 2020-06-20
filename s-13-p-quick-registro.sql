@@ -54,11 +54,12 @@ begin
   -- REGISTRO RESPECTO AL SUBTIPO QUE SE TIENE 
 
   if p_es_renta = 1 then
-    v_fx_nearRentaCasas:= nearRentaCasas(v_vivienda_id);
     insert into vivienda_rentar (vivienda_id, renta_mensual)
-    values (v_vivienda_id,v_fx_nearRentaCasas);--LLAMARFUNCION -> Parabuenas ganancias y un valor competitivo y atractivo
+    values (v_vivienda_id,10000);--LLAMARFUNCION -> Parabuenas ganancias y un valor competitivo y atractivo <-Valor temporal
     dbms_output.put_line('REGISTRO CONCLUIDO! ');
-
+    v_fx_nearRentaCasas:= nearRentaCasas(v_vivienda_id);
+    update vivienda_rentar set renta_mensual = v_fx_nearRentaCasas where vivienda_id = v_vivienda_id;
+    
   elsif p_es_venta = 1 then
     v_folio:= SUBSTR( to_char(v_vivienda_id, '099') ,1 ,2) ||  SUBSTR( to_char(p_num_catastral, '9900') ,1 ,10) ||  to_char(sysdate, 'yyyy') ||  to_char(sysdate, 'MONTH') ;  --folio =18
     insert into vivienda_venta (vivienda_id, num_catastral, folio, precio_inicial,pdf_avaluo)
