@@ -30,7 +30,7 @@ cursor cur_data is
 v_file  utl_file.FILE_TYPE;
 
 begin
-  v_file := utl_file.FOPEN(location     => 'csvDir',
+  v_file := utl_file.FOPEN(location     => 'CSVDIR',
                            filename     => 'generalData.csv',
                            open_mode    => 'W');
 
