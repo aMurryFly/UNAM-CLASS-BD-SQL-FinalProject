@@ -61,7 +61,10 @@ grant read, write on directory pdf to muva_proy_admin;
 prompt E Y PERMISOS | T.EXTERNAS
 !rm -rf /tmp/extTables
 !mkdir /tmp/extTables
+!cp dataFiles/dataGlobalHome.csv /tmp/extTables
 !chmod 777 /tmp/extTables
+
+
 
 create directory extTables as '/tmp/extTables';
 grant read, write on directory extTables to muva_proy_admin;
