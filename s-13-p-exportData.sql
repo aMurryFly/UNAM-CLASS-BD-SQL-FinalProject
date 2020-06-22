@@ -4,19 +4,9 @@
 
 -- Reference: https://oracle-base.com/articles/9i/generating-csv-files
 -- Reference: https://docs.oracle.com/database/121/ARPLS/u_file.htm#ARPLS70903
+set serveroutput on
 
-prompt CONECTANDO A SYSTEM  
-connect sys as sysdba;
-
-!mkdir /tmp/csvDir
-!chmod 777 /tmp/csvDir
-
-create directory csvDir as '/tmp/csvDir';
-grant read, write on directory csvDir to muva_proy_admin;
-GRANT EXECUTE ON UTL_FILE TO muva_proy_admin;
-
-
-connect muva_proy_admin/muva;
+--connect muva_proy_admin/muva;
 
 create or replace procedure vivienda_export_csv as
 cursor cur_data is

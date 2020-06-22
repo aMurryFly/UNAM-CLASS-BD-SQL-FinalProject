@@ -1,6 +1,7 @@
 --@Autores: Alfonso Murrieta Villegas | Joaquin Valdespino Mendieta
 --@Fecha creación: 18/06/2020
 --@Descripción: PROCEDIMIENTO 2 | PRUEBA EVENTO CORONAVIRUS 
+set serveroutput on
 
 create or replace procedure registros_rapidos(
 --p_vivienda_id  out number,

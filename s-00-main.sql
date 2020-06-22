@@ -44,7 +44,7 @@ drop directory fotosCasa;
 drop directory iconos;
 drop directory pdf;
 drop directory extTables;
-
+drop directory csvDir;
 
 prompt CREACIÓN USUARIOS
 

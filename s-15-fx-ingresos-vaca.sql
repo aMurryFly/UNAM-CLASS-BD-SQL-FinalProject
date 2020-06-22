@@ -2,6 +2,7 @@
 --@Fecha creación: 18/06/2020
 --@Descripción: FUNCION 2 | CALCULO DE LOS INGRESOS AL VACACIONAR EN UNA VIVIENDA
 -- Sólo hace del último registro
+set serveroutput on
 
 create or replace function calculaIngresosAlquiler(
   --p_fecha_inicio date,

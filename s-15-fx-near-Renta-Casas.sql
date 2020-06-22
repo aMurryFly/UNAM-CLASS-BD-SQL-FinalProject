@@ -3,6 +3,8 @@
 --@Descripción: FUNCION 3 | PROMEDIO DE LAS RENTAS DE CASAS CERCANAS AL DE LA VIVIENDA DEL PARAMETRO
 -- Servirá como auxiliar para el quick registro
 
+set serveroutput on
+
 create or replace function nearRentaCasas(
   p_vivienda_id vivienda_rentar.vivienda_id%type
 )

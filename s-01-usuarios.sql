@@ -32,6 +32,7 @@ grant rol_invitado to muva_proy_invitado;
 
 
 prompt CREACION Y PERMISOS | FOTOS CASAS 
+!rm -rf /tmp/fotosCasa
 !mkdir /tmp/fotosCasa
 !chmod 777 /tmp/fotosCasa
 
@@ -39,7 +40,8 @@ create directory fotosCasa as '/tmp/fotosCasa';
 grant read, write on directory fotosCasa to muva_proy_admin;
 
 
-prompt E Y PERMISOS | FOTOS ICONOS 
+prompt E Y PERMISOS | FOTOS ICONOS
+!rm -rf /tmp/iconos 
 !mkdir /tmp/iconos
 !chmod 777 /tmp/iconos
 
@@ -48,6 +50,7 @@ grant read, write on directory iconos to muva_proy_admin;
 
 
 prompt E Y PERMISOS | FOTOS PDF 
+!rm -rf /tmp/pdf
 !mkdir /tmp/pdf
 !chmod 777 /tmp/pdf
 
@@ -56,11 +59,23 @@ grant read, write on directory pdf to muva_proy_admin;
 
 
 prompt E Y PERMISOS | T.EXTERNAS
+!rm -rf /tmp/extTables
 !mkdir /tmp/extTables
 !chmod 777 /tmp/extTables
 
 create directory extTables as '/tmp/extTables';
 grant read, write on directory extTables to muva_proy_admin;
+
+
+prompt E Y PERMISOS | CSV - Archivos externos
+!rm -rf /tmp/csvDir
+!mkdir /tmp/csvDir
+!chmod 777 /tmp/csvDir
+
+create directory csvDir as '/tmp/csvDir';
+grant read, write on directory csvDir to muva_proy_admin;
+GRANT EXECUTE ON UTL_FILE TO muva_proy_admin;
+
 
 prompt DONE - 01!
 

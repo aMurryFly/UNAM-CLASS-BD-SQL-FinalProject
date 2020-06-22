@@ -2,6 +2,8 @@
 --@Fecha creación: 18/06/2020
 --@Descripción: FUNCION 1 | DESCUENTO A USUARIO DADO SUS COMPRAS 
 
+set serveroutput on
+
 create or replace function descuento_usuario(
   p_usuario_id usuario.usuario_id%type
 ) 

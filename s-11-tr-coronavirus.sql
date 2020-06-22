@@ -7,6 +7,7 @@
 --	2) Por ada registro actualizado se añade un registro al histórico. 
 
 PROMPT ACTUALIZANDO 
+set serveroutput on
 
 create or replace trigger tg_coranavirus_update
 for update of status_vivienda_id on vivienda

@@ -5,8 +5,8 @@
 Prompt MOSTRANDO INFORMACION BLOB
 col nombre_archivo format a30
 
-select libro_id,nombre_archivo,dbms_lob.getlength(imagen) as longitud_imagen
-from libro_imagen;
+select imagen_id,nombre_archivo,dbms_lob.getlength(imagen) as longitud_imagen
+from imagen;
 
 
 prompt DONE S-018!

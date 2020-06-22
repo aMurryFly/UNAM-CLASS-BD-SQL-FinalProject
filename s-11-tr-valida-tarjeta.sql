@@ -2,9 +2,10 @@
 --@Fecha creación: 18/06/2020
 --@Descripción: Trigger 1 | REQUISITO DEL CASO DE ESTUDIO: 
 --   El sistema solicitará (en caso de no existir) los datos de una tarjeta de crédito para realizar el pago por los días que va a permanecer el cliente en la vivienda , verificar si existe una tarjeta por parte del usuario, ademas verificar la vigencia 
+set serveroutput on
 
 prompt TRIGGER
-connect muva_proy_admin/muva;
+--connect muva_proy_admin/muva;
 
 create or replace trigger trg_tarjeta_alquilar
   before insert on alquilar
