@@ -79,7 +79,7 @@ Prompt EXPORTACIÓN DE DATOS
 !chmod 755 /tmp/fotosCasa/img-*
 
 Prompt LLAMANDO AL PROCEDIMIENTO
---exec p_fotos_casa
---commit;
+exec p_fotos_casa
+commit;
 
 prompt DONE S-017!

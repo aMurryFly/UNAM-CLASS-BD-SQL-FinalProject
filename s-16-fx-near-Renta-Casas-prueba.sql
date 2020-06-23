@@ -24,7 +24,8 @@ registros_rapidos(
 end;
 /
 
-select *
+col direccion format a30 
+select v.vivienda_id,v.longitud,v.latitud,v.direccion,v.es_renta,v.es_vaca,v.es_venta, vr.* 
 from vivienda v  
 join vivienda_rentar vr
 on vr.vivienda_id = v.vivienda_id

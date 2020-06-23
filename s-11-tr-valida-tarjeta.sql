@@ -35,7 +35,8 @@ begin
     v_mes_expiracion := i.mes_expiracion;
     v_anio_expiracion := i.anio_expiracion;
 
-    if v_anio_actual <= v_anio_expiracion and v_mes_actual < v_mes_expiracion then
+    dbms_output.put_line('date'|| v_mes_actual || ','	|| v_anio_actual ||'/ mes: ' || v_mes_expiracion || ' año:'|| v_anio_expiracion);	
+    if v_anio_actual <= (v_anio_expiracion + 2000) and v_mes_actual < v_mes_expiracion then
       v_validacion := 1;
     end if;
 
