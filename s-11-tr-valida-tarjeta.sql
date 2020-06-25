@@ -31,20 +31,18 @@ begin
     v_anio_actual := extract(YEAR from sysdate);
     v_mes_actual  := extract(MONTH from sysdate);
 
-  for i in cur_tarjetas loop
-    v_mes_expiracion := i.mes_expiracion;
-    v_anio_expiracion := i.anio_expiracion;
+open cur_tarjetas;
 
-    dbms_output.put_line('date'|| v_mes_actual || ','	|| v_anio_actual ||'/ mes: ' || v_mes_expiracion || ' año:'|| v_anio_expiracion);	
+loop
+    fetch cur_tarjetas into v_mes_expiracion, v_anio_expiracion;
+    dbms_output.put_line('date'|| v_mes_actual || ','	|| v_anio_actual ||'/ mes: ' || v_mes_expiracion || ' año:'|| 		v_anio_expiracion);	
     if v_anio_actual <= (v_anio_expiracion + 2000) and v_mes_actual < v_mes_expiracion then
       v_validacion := 1;
     end if;
-
-  end loop;
+        exit when cur_tarjetas%notfound or v_validacion = 1;
+    end loop;
 
   if v_validacion = 1 then
-        insert into alquilar (alquilar_id, folio, usuario_id, vivienda_id)
-        values (:new.alquilar_id, :new.folio, :new.usuario_id, :new.vivienda_id);
 
         update vivienda
         set status_vivienda_id = 3
