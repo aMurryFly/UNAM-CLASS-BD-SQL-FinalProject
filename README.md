@@ -6,7 +6,7 @@
 ## Acerca del proyecto
 
 El presente repositorio es el proyecto final de la materia de Basesm de Datos de la Facultad de Ingeniería. 
-Cabe destacar que toda la información acerca del caso de estudio se encuentra en la carpeta de [Caso de estudio]() además de los debidos requerimientos planteados por el profesor.
+Cabe destacar que toda la información acerca del caso de estudio se encuentra en la carpeta de [Caso de estudio](https://github.com/aMurryFly/globalHome_BD/blob/master/casoEstudioNoBD/global-home.pdf) además de los debidos requerimientos planteados por el profesor.
 
 Para cualquier duda o aclaración puedes levantar un issue en el presente repositorio o mandarme un correo: alfonsomvmx@outlook.com
 
