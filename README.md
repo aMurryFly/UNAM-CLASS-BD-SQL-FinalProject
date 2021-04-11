@@ -11,6 +11,7 @@ Cabe destacar que toda la información acerca del caso de estudio se encuentra e
 Para cualquier duda o aclaración puedes levantar un issue en el presente repositorio o mandarme un correo: alfonsomvmx@outlook.com
 
 **NOTA:** *La carpeta de dataFiles corresponde a todos los .sql con data para este proyecto* 
+
 **NOTA 2:** *En la carpeta de design puedes encontrar el diseño lógico y conceptual del proyecto [Diseño Lógico](https://github.com/aMurryFly/globalHome_BD/blob/master/design/finalModelLogic.jpg)* 
 
 
